@@ -3,12 +3,14 @@
 // src/Components/CharacterCardComponent.php
 namespace App\Components;
 
+use App\Entity\Character;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
 
 #[AsTwigComponent('character_card')]
 class CharacterCardComponent
 {
+  public Character $character;
   public string $name;
   public string $height;
   public string $mass;

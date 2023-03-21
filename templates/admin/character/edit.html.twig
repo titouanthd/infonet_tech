@@ -5,7 +5,7 @@
 
     {{ include('admin/character/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_front_home') }}" class="btn btn-secondary my-2">back to list</a>
+    <a href="{{ path('app_admin_character_index') }}" class="btn btn-sm btn-secondary my-2">back to list</a>
 
     {{ include('admin/character/_delete_form.html.twig') }}
 {% endblock %}

@@ -32,9 +32,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_front_home') }}">back to list</a>
+    <a href="{{ path('app_admin_character_edit', {'id': character.id}) }}" class="btn btn-primary">edit</a>
 
-    <a href="{{ path('app_admin_character_edit', {'id': character.id}) }}">edit</a>
+    <a href="{{ path('app_admin_character_index') }}" class="btn btn-sm btn-secondary my-2">back to list</a>
 
     {{ include('admin/character/_delete_form.html.twig') }}
 {% endblock %}

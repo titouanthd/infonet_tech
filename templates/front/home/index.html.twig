@@ -9,13 +9,7 @@
 		{% for character in characters %}
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 {{ component('character_card', {
-                    'name': character.name,
-                    'mass': character.mass,
-                    'height': character.height,
-                    'gender': character.gender,
-                    'picture': "https://picsum.photos/414/311",
-                    'editUrl': path('app_admin_character_edit', {'id': character.id}),
-                    'deleteUrl': path('app_admin_character_delete', {'id': character.id})
+                    'character': character,
                 }) }}
             </div>
         {% endfor %}
