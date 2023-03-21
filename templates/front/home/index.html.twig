@@ -14,7 +14,8 @@
                     'height': character.height,
                     'gender': character.gender,
                     'picture': "https://picsum.photos/414/311",
-                    'url': path('app_admin_character_edit', {'id': character.id})
+                    'editUrl': path('app_admin_character_edit', {'id': character.id}),
+                    'deleteUrl': path('app_admin_character_delete', {'id': character.id})
                 }) }}
             </div>
         {% endfor %}

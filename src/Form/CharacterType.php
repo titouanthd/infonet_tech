@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Character;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,8 +17,19 @@ class CharacterType extends AbstractType
             ->add('name')
             ->add('mass')
             ->add('height')
-            ->add('gender')
-            ->add('picture')
+            ->add('gender', ChoiceType::class, [
+                'choices' => [
+                    "male" => 'male',
+                    "female" => 'female',
+                    "hermaphrodite" => 'hermaphrodite',
+                    "n/a" => 'n/a',
+                ],
+                'autocomplete' => true,
+            ])
+            ->add('picture', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+            ])
             // ->add('movies', Choice)
         ;
     }

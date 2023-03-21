@@ -1,7 +1,7 @@
 {% extends 'layouts/admin.html.twig' %}
 
 {% block body %}
-  <h1>Character index</h1>
+  <h1>{{page_title}}</h1>
 
   <div class="overflow-auto">
     <div class="table table-hover">
@@ -12,6 +12,7 @@
             <th>Name</th>
             <th>Mass</th>
             <th>Height</th>
+            <th>Gender</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -22,6 +23,7 @@
               <td>{{ character.name }}</td>
               <td>{{ character.mass }}</td>
               <td>{{ character.height }}</td>
+              <td>{{ character.gender }}</td>
               <td>
                 <a href="{{ path('app_admin_character_show', {'id': character.id}) }}">show</a>
                 <a href="{{ path('app_admin_character_edit', {'id': character.id}) }}">edit</a>
