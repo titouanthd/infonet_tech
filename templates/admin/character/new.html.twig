@@ -1,0 +1,9 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block body %}
+    <h1>Create new Character</h1>
+
+    {{ include('admin/character/_form.html.twig') }}
+
+    <a href="{{ path('app_front_home') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="vh-100 w-100">
+
+			<div class="row d-flex align-items-center justify-content-center h-100">
+				<div class="col-md-6">
+					{% include "parts/_alerts.html.twig" %}
+					<div class="card w-100">
+						<div class="card-header">
+							<h1 class="card-title">{{ page_title }}</h1>
+						</div>
+						<div class="card-body">
+							<form method="post">
+								<div class="mb-3">
+									<label for="email" class="form-label">Email</label>
+									<input type="email" value="{{ last_username }}" name="email" id="email" class="form-control" aria-describedby="emailHelp" autocomplete="email" required autofocus>
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
+								<div class="mb-3">
+									<label for="password" class="form-label">Password</label>
+									<input type="password" class="form-control" id="password" name="password" autocomplete="current-password" required>
+								</div>
+								<div class="mb-3 form-check">
+									<input type="checkbox" class="form-check-input" id="_remember_me" name="_remember_me">
+									<label class="form-check-label" for="_remember_me">Remember me</label>
+								</div>
+								<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

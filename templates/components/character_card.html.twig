@@ -1,0 +1,17 @@
+<div class="card">
+  <img src="{{ picture }}" class="card-img-top img-fluid" alt="...">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="card-title mb-0">{{ name }}</h5>
+    <span class="badge bg-secondary">{{ gender }}</span>
+  </div>
+  <div class="card-body">
+    <ul class="mb-0">
+      <li>Height: {{ height }}</li>
+      <li>Mass: {{ mass }}</li>
+    </ul>
+  </div>
+  {# card footer #}
+  <div class="card-footer">
+    <a href="{{ url }}" class="btn btn-sm btn-primary">Edit</a>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<h1>{{ page_title }}</h1>
+
+		<form action="{{ path('app_front_search') }}" method="get">
+			<div class="row">
+				<div class="col">
+					<label class="form-label" for="q">Search term:</label>
+					<input class="form-control" type="text" id="q" name="q">
+				</div>
+				<div class="col-auto d-flex align-items-end">
+					<button class="btn btn-primary" type="submit">Search</button>
+				</div>
+			</div>
+
+		</form>
+
+		{% if searchTerm %}
+			<p class="alert alert-secondary my-3">Search results for "{{ searchTerm }}":</p>
+		{% endif %}
+
+		{% if characters %}
+			<div class="row my-3">
+				{% for character in characters %}
+					<div class="col-12 col-md-6 col-lg-4 mb-3">
+						{{ component('character_card', {
+                    'name': character.name,
+                    'mass': character.mass,
+                    'height': character.height,
+                    'gender': character.gender,
+                    'picture': "https://picsum.photos/414/311",
+                    'url': path('app_admin_character_edit', {'id': character.id})
+                }) }}
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<p>No characters found.</p>
+		{% endif %}
+	</div>
+{% endblock %}

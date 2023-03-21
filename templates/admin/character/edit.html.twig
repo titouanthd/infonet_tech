@@ -1,0 +1,11 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block body %}
+    <h1>Edit Character</h1>
+
+    {{ include('admin/character/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_front_home') }}">back to list</a>
+
+    {{ include('admin/character/_delete_form.html.twig') }}
+{% endblock %}

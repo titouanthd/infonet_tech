@@ -1,0 +1,13 @@
+// assets/styles/global.scss
+
+// customize some Bootstrap variables
+$primary: darken(#16a974, 20%);
+
+// change body background color
+$body-bg: #f5f5f5;
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+// import bootstrap icons
+@import "~bootstrap-icons/font/bootstrap-icons";
