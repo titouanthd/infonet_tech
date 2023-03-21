@@ -24,14 +24,15 @@
 		{% if characters %}
 			<div class="row my-3">
 				{% for character in characters %}
-					<div class="col-12 col-md-6 col-lg-4 mb-3">
+					<div class="col-12 mb-3">
 						{{ component('character_card', {
                     'name': character.name,
                     'mass': character.mass,
                     'height': character.height,
                     'gender': character.gender,
                     'picture': "https://picsum.photos/414/311",
-                    'url': path('app_admin_character_edit', {'id': character.id})
+                    'editUrl': path('app_admin_character_edit', {'id': character.id}),
+                    'deleteUrl': path('app_admin_character_delete', {'id': character.id})
                 }) }}
 					</div>
 				{% endfor %}

@@ -14,5 +14,6 @@ class CharacterCardComponent
   public string $mass;
   public string $gender;
   public string $picture = "https://picsum.photos/414/311";
-  public string $url = "#";
+  public string $editUrl = "#";
+  public string $deleteUrl = "#";
 }

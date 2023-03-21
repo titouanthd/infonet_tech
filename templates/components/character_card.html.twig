@@ -1,17 +1,26 @@
 <div class="card">
-  <img src="{{ picture }}" class="card-img-top img-fluid" alt="...">
-  <div class="card-header d-flex justify-content-between align-items-center">
-    <h5 class="card-title mb-0">{{ name }}</h5>
-    <span class="badge bg-secondary">{{ gender }}</span>
-  </div>
   <div class="card-body">
-    <ul class="mb-0">
-      <li>Height: {{ height }}</li>
-      <li>Mass: {{ mass }}</li>
-    </ul>
-  </div>
-  {# card footer #}
-  <div class="card-footer">
-    <a href="{{ url }}" class="btn btn-sm btn-primary">Edit</a>
+    <div class="row">
+      <div class="col-auto">
+        <img style="width: 100px;height: 100px;" src="{{ picture }}" class="card-img-top img-thumbnail rounded-circle" alt="...">
+      </div>
+      <div class="col d-flex flex-column">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="card-title mb-0">{{ name }}</h5>
+          <span class="badge bg-secondary">{{ gender }}</span>
+        </div>
+        <ul class="my-2">
+          <li>Height: {{ height }}</li>
+          <li>Mass: {{ mass }}</li>
+        </ul>
+        {% if app.user %}
+          <div class="d-flex justify-content-end">
+            <a href="{{ editUrl }}" class="btn btn-sm btn-primary me-2">Edit</a>
+            <a href="{{ deleteUrl }}" class="btn btn-sm btn-danger">Delete</a>
+          </div>
+        {% endif %}
+        
+      </div>
+    </div>
   </div>
 </div>
