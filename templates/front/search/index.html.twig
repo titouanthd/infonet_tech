@@ -11,7 +11,7 @@
 					<input class="form-control" type="text" id="q" name="q">
 				</div>
 				<div class="col-auto d-flex align-items-end">
-					<button class="btn btn-primary" type="submit">Search</button>
+					<button class="btn btn-sm btn-primary" type="submit">Search</button>
 				</div>
 			</div>
 
@@ -25,15 +25,7 @@
 			<div class="row my-3">
 				{% for character in characters %}
 					<div class="col-12 mb-3">
-						{{ component('character_card', {
-                    'name': character.name,
-                    'mass': character.mass,
-                    'height': character.height,
-                    'gender': character.gender,
-                    'picture': "https://picsum.photos/414/311",
-                    'editUrl': path('app_admin_character_edit', {'id': character.id}),
-                    'deleteUrl': path('app_admin_character_delete', {'id': character.id})
-                }) }}
+						{{ component('character_card', { 'character': character}) }}
 					</div>
 				{% endfor %}
 			</div>

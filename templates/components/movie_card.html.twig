@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col d-flex flex-column">
+        <div class="d-flex flex-column align-items-start">
+          <h5 class="card-title mb-0">{{ movie.name }}</h5>
+          {# show link #}
+          <a href="{{ path('app_front_movie_show', {id: movie.id}) }}" class="">Show</a>
+        </div>
+        {% if app.user %}
+          <div class="d-flex justify-content-end">
+            <a href="{{ path('app_admin_movie_edit', {id: movie.id}) }}" class="btn btn-sm btn-primary me-2">Edit</a>
+            {{ include('admin/movie/_delete_form.html.twig') }}
+          </div>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+</div>

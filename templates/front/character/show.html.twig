@@ -1,0 +1,37 @@
+{% extends "layouts/base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <h1>{{page_title}}</h1>
+
+    <div class="overflow-auto">
+        <table class="table table-bordered table-hover table-sm">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ character.id }}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ character.name }}</td>
+                </tr>
+                <tr>
+                    <th>Movies</th>
+                    <td>
+                      {% for movie in character.movies %}
+                        <a href="{{ path('app_front_movie_show', {id: movie.id}) }}">{{ movie.name }}</a><br>
+                      {% endfor %}
+                    </td>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('app_front_home') }}" class="btn btn-sm btn-secondary my-2">
+      back to list
+    </a>
+
+    <a href="{{ path('app_admin_character_edit', {'id': character.id}) }}" class="btn btn-sm btn-primary">edit</a>
+
+    {{ include('admin/character/_delete_form.html.twig') }}
+</div>
+{% endblock %}

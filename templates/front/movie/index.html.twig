@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+        <div class="col-12">
+            <h1>{{ page_title }}</h1>
+        </div>
+		{% for movie in movies %}
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                {{ component('movie_card', {
+                    'movie': movie,
+                }) }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
