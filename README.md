@@ -44,19 +44,19 @@ Run the database migration to create the required database tables using the foll
 symfony console doctrine:migrations:migrate
 ```
 
+### Load fixtures
+You can create a fake user using the following command:
+
+```
+php bin/console doctrine:fixtures:load
+```
+
 ### Load data
 
 You can load data from api using the following command:
 
 ```
 php bin/console starwars:import
-```
-
-### Load fixtures
-You can create a fake user using the following command:
-
-```
-php bin/console doctrine:fixtures:load
 ```
 
 ### install dependencies
